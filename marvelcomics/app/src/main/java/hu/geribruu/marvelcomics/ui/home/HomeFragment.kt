@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -11,14 +12,16 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 import hu.geribruu.marvelcomics.R
 import hu.geribruu.marvelcomics.data.CharacterRepository
+import hu.geribruu.marvelcomics.data.model.CharacterDataModel
+import hu.geribruu.marvelcomics.navigator.AppNavigator
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    @Inject lateinit var repository : CharacterRepository
-
     private lateinit var homeViewModel: HomeViewModel
+
+    @Inject lateinit var navigator: AppNavigator
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -32,6 +35,7 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
         return root
     }
 }
