@@ -9,8 +9,6 @@ android:
     - platform-tools
     - tools
     - extra-google-googleplayservices
-  MOBILSZOFTVER LABOR – TRAVIS CI 4 / 6
-  Copyright © 2019. Ekler Péter, Forstner Bertalan, Balogh Tamás, Automatizálási és Alkalmazott Informatikai Tanszék
 - extra-google-m2repository
 - extra-android-m2repository
 - addon-google_apis-google-28
