@@ -1,4 +1,4 @@
-package hu.geribruu.marvelcomics.model
+package hu.geribruu.marvelcomics.network.model
 
 import com.google.gson.annotations.SerializedName
 

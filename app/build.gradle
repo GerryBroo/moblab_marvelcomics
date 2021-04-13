@@ -6,6 +6,10 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+def apikeyPropertiesFile = rootProject.file("secrets.properties.txt")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -19,8 +23,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "PUBLIC_API_KEY", "\"${System.getenv("MARVEL_PUBLIC_API_KEY")}\""
-        buildConfigField "String", "PRIVATE_API_KEY", "\"${System.getenv("MARVEL_PRIVATE_API_KEY")}\""
+        buildConfigField("String", "PRIVATE_API_KEY", apikeyProperties['MARVEL_PRIVATE_API_KEY'])
+        buildConfigField("String", "PUBLIC_API_KEY", apikeyProperties['MARVEL_PUBLIC_API_KEY'])
     }
 
     buildTypes {
@@ -75,4 +79,5 @@ dependencies {
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
 }
