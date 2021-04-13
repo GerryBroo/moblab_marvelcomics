@@ -12,3 +12,11 @@ https://docs.google.com/document/d/1IpSScqOQ6PKPfW9fC0kLR9rQ3YE4hl_VNAcKOKYT7-c/
 ## Labor #2
 
 * ARCHITEKTÚRA ÉS KÖRNYEZET
+
+## Labor #3
+
+* HÁLÓZAT ÉS ADATBÁZIS
+
+## Labor #4
+
+## Labor #5
