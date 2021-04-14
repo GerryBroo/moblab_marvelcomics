@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,40 +24,29 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-
     @Inject lateinit var navigator: AppNavigator
-    @Inject lateinit var service: CharacterApi
+
+    private val viewModel : HomeViewModel by viewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
+       /* homeViewModel =
                 ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
-        })
+        })*/
 
-        service.getCharacters(10,0).enqueue(object : Callback<CharacterDataWrapper> {
-            override fun onResponse(
-                    call: Call<CharacterDataWrapper>,
-                    response: Response<CharacterDataWrapper>
-            ) {
-                val result : Array<CharacterNet> = response.body()!!.data.results
-                for(r in result) {
-                    Log.d("RETROFIT", r.name)
-                }
-            }
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
 
-            override fun onFailure(call: Call<CharacterDataWrapper>, t: Throwable) {
-                Log.d("RETROFIT", "FAIL")
-            }
-        })
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        return root
+        viewModel.characters
     }
 }

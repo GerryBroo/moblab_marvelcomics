@@ -1,32 +1,29 @@
 package hu.geribruu.marvelcomics.di
 
 import android.content.Context
-import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import hu.geribruu.marvelcomics.data.CharacterDao
-import hu.geribruu.marvelcomics.data.CharacterRoomDatabase
+import hu.geribruu.marvelcomics.data.FavouriteCharacterDao
+import hu.geribruu.marvelcomics.data.FavouriteCharacterRoomDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
 object DatabaseModule {
 
+    private val applicationScope = CoroutineScope(SupervisorJob())
+
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext appContext: Context): CharacterRoomDatabase {
-        return Room.databaseBuilder(
-            appContext,
-            CharacterRoomDatabase::class.java,
-            "characters.db"
-        ).build()
+    fun provideDatabase(@ApplicationContext appContext: Context): FavouriteCharacterRoomDatabase {
+       return FavouriteCharacterRoomDatabase.getDatabase(appContext, applicationScope)
     }
 
     @Provides
-    fun provideCharacterDao(database: CharacterRoomDatabase): CharacterDao {
-        return database.characterDao()
-    }
+    fun provideCharacterDao(databaseFavourite: FavouriteCharacterRoomDatabase): FavouriteCharacterDao = databaseFavourite.favouriteCharacterDao()
 }
