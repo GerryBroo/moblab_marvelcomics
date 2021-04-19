@@ -40,7 +40,7 @@ abstract class FavouriteCharacterRoomDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                         context.applicationContext,
                         FavouriteCharacterRoomDatabase::class.java,
-                        "bird"
+                        "characters"
                 )
                         .addCallback(CharacterDatabaseCallback(scope))
                         .build()
