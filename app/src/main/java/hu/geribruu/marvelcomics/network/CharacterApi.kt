@@ -1,6 +1,7 @@
 package hu.geribruu.marvelcomics.network
 
 import hu.geribruu.marvelcomics.network.model.CharacterDataWrapper
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
