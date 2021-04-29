@@ -12,9 +12,9 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import hu.geribruu.marvelcomics.R
-import hu.geribruu.marvelcomics.model.toMarvelCharacter
 import hu.geribruu.marvelcomics.navigator.AppNavigator
 import hu.geribruu.marvelcomics.ui.character.CharacterDetailActivity
+import hu.geribruu.marvelcomics.ui.character.CharacterViewModel.Companion.CHARACTER_ID
 import hu.geribruu.marvelcomics.ui.home.adapter.HomeListAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 import javax.inject.Inject
@@ -32,13 +32,6 @@ class HomeFragment : Fragment(), HomeListAdapter.HomeListClickListener {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-       /* homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })*/
 
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
@@ -61,11 +54,15 @@ class HomeFragment : Fragment(), HomeListAdapter.HomeListClickListener {
         }
     }
 
-    override fun onClickHomeList() {
-        startActivity(
-            Intent(context, CharacterDetailActivity()::class.java).apply {
+    override fun onClickHomeList(characterId: String) {
 
+        startActivity(
+            Intent(activity, CharacterDetailActivity::class.java).apply {
+                Log.d("NAV", "nav onclik $characterId" )
+                putExtra(CHARACTER_ID, characterId)
             }
         )
+
+        //navigator.navigateToCharacter(characterId)
     }
 }

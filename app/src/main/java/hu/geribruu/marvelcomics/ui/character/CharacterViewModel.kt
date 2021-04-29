@@ -1,13 +1,24 @@
 package hu.geribruu.marvelcomics.ui.character
 
+import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import hu.geribruu.marvelcomics.network.CharacterRepository
+import javax.inject.Inject
 
-class CharacterViewModel : ViewModel() {
+@HiltViewModel
+class CharacterViewModel @Inject constructor(
+        private val savedStateHandle: SavedStateHandle,
+        private val repository: CharacterRepository
+        ): ViewModel(), LifecycleObserver {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+    companion object {
+        const val CHARACTER_ID = "CHARACTER_ID"
     }
-    val text: LiveData<String> = _text
+
+    private val showTextLiveData = savedStateHandle.getLiveData<String>(CHARACTER_ID)
+    val showTextDataNotifier: LiveData<String>
+        get() = showTextLiveData
 }

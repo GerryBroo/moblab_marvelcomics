@@ -1,8 +1,8 @@
 package hu.geribruu.marvelcomics.navigator
 
-import hu.geribruu.marvelcomics.data.model.CharacterDataModel
+import hu.geribruu.marvelcomics.network.model.CharacterNet
 
 interface AppNavigator {
 
-    fun navigateToCharacter(characterDataModel: CharacterDataModel)
+    fun navigateToCharacter(characterId: Long)
 }
