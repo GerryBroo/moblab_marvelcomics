@@ -21,11 +21,8 @@ class CharacterViewModel @Inject constructor(
         const val CHARACTER_ID = "CHARACTER_ID"
     }
 
-    val showTextDataNotifier: LiveData<CharacterNet> = loadCharacter()
-        get() {
-            field.value?.let { Log.d("ASD", it.description) }
-            return field
-        }
+    val characterLiveData: LiveData<CharacterNet> = loadCharacter()
+        get() = field
 
     private fun loadCharacter() : MutableLiveData<CharacterNet> {
         val characterId = savedStateHandle.get<String>(CHARACTER_ID)
