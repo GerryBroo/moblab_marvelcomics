@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,7 +45,7 @@ class FavouriteFragment : Fragment() {
     private fun setupRecycleView() {
         adapter = FavouriteListAdapter()
         recyclerview_favourite.adapter = adapter
-        recyclerview_favourite.layoutManager = LinearLayoutManager(context)
+        recyclerview_favourite.layoutManager = GridLayoutManager(context, 2)
 
         activity?.let { activity ->
             viewModel.characters.observe(activity, Observer { character ->

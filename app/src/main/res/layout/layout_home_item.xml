@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/layout_home_item"
+    android:layout_marginBottom="5dp"
     android:padding="15dp">
 
     <TextView
@@ -14,6 +15,17 @@
         android:textColor="#FFF"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
+        android:textSize="15sp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_details"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="See details"
+        android:gravity="right"
+        android:textColor="@color/marvelred"
+        android:layout_centerVertical="true"
         android:textSize="15sp">
     </TextView>
 

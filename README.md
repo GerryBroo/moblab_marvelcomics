@@ -19,4 +19,8 @@ https://docs.google.com/document/d/1IpSScqOQ6PKPfW9fC0kLR9rQ3YE4hl_VNAcKOKYT7-c/
 
 ## Labor #4
 
+* FELÜLET ÉS TESZTELÉS
+
 ## Labor #5
+
+* ANALITIKA ÉS FELÜLET TESZTEK

@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Marvel Characters and Comics</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Marvel Characters and Comics</string>
     <string name="title_character">Character</string>
-    <string name="title_favourite">Favourite</string>
+    <string name="title_favourite">Your Favourite Marvel Characters</string>
+    <string name="navbar_favourite">Favourite</string>
+    <string name="navbar_home">Home</string>
     <string name="character_s_name">Character\'s name</string>
     <string name="comics">Comics:</string>
     <string name="description">Description</string>
