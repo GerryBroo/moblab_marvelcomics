@@ -4,5 +4,5 @@ import hu.geribruu.marvelcomics.network.model.CharacterNet
 
 interface AppNavigator {
 
-    fun navigateToCharacter(characterId: Long)
+    fun navigateToCharacter(characterId: String)
 }

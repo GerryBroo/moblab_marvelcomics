@@ -1,8 +1,6 @@
 package hu.geribruu.marvelcomics.ui.home
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import hu.geribruu.marvelcomics.R
 import hu.geribruu.marvelcomics.navigator.AppNavigator
-import hu.geribruu.marvelcomics.ui.character.CharacterDetailActivity
-import hu.geribruu.marvelcomics.ui.character.CharacterViewModel.Companion.CHARACTER_ID
 import hu.geribruu.marvelcomics.ui.home.adapter.HomeListAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 import javax.inject.Inject
@@ -55,13 +51,6 @@ class HomeFragment : Fragment(), HomeListAdapter.HomeListClickListener {
     }
 
     override fun onClickHomeList(characterId: String) {
-
-        startActivity(
-            Intent(activity, CharacterDetailActivity::class.java).apply {
-                putExtra(CHARACTER_ID, characterId)
-            }
-        )
-
-        //navigator.navigateToCharacter(characterId)
+        navigator.navigateToCharacter(characterId)
     }
 }
