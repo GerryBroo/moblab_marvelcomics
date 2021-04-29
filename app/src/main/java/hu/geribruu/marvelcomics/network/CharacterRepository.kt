@@ -23,7 +23,7 @@ class CharacterRepository @Inject constructor(private val service : CharacterApi
             }
 
             override fun onFailure(call: Call<CharacterDataWrapper>, t: Throwable) {
-                Log.d("RETROFIT", "FAIL")
+                Log.d("RETROFIT", "FAIL ${t.message}")
             }
         })
         return result

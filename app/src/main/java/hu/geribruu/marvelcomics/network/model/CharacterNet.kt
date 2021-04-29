@@ -9,8 +9,8 @@ data class CharacterNet(
     var name: String,
     @SerializedName("description")
     var description: String,
-  /*  @SerializedName("thumbnail")
-    var thumbnail: Image?,*/
-   /* @SerializedName("comics")
-    var comicsList: List<ComicList>*/
+    @SerializedName("comics")
+    var comicsList: ComicList
+    /*  @SerializedName("thumbnail")
+   var thumbnail: Image?,*/
 )
