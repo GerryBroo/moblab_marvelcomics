@@ -7,7 +7,7 @@
     tools:context=".ui.character.CharacterDetailActivity">
 
     <TextView
-        android:id="@+id/tv_character"
+        android:id="@+id/tv_character_st"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -18,18 +18,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_character_name"
+        android:id="@+id/tv_character_dy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_character" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_character_st" />
 
     <TextView
-        android:id="@+id/tv_character_d"
+        android:id="@+id/tv_desc_st"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -37,21 +36,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_character_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_character_dy" />
 
     <TextView
-        android:id="@+id/tv_character_descriptoin"
+        android:id="@+id/tv_desc_dy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_character_d" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_st" />
 
     <TextView
-        android:id="@+id/tv_comics"
+        android:id="@+id/tv_comics_st"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="79dp"
@@ -60,6 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_character_descriptoin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_dy"
         app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

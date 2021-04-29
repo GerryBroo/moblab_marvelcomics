@@ -35,7 +35,7 @@ class HomeListAdapter(private val onClick: HomeListClickListener) :
             tvCharacterName.text = marvelCharacter.name
 
             itemView.setOnClickListener {
-                onClick.onClickHomeList()
+                onClick.onClickHomeList(marvelCharacter.id.toString())
             }
         }
 
@@ -60,6 +60,6 @@ class HomeListAdapter(private val onClick: HomeListClickListener) :
     }
 
     interface HomeListClickListener {
-        fun onClickHomeList()
+        fun onClickHomeList(characterId: String)
     }
 }
