@@ -11,6 +11,12 @@ data class CharacterDataModel(
     @PrimaryKey(autoGenerate = true)
     var id : Long = 0,
 
+    @ColumnInfo(name = "apiId")
+    var apiId: String,
+
     @ColumnInfo(name = "name")
-    var name : String
+    var name : String,
+
+    @ColumnInfo(name = "description")
+    var description: String
 )
