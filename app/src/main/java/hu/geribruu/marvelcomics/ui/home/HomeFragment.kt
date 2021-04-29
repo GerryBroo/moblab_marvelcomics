@@ -58,7 +58,6 @@ class HomeFragment : Fragment(), HomeListAdapter.HomeListClickListener {
 
         startActivity(
             Intent(activity, CharacterDetailActivity::class.java).apply {
-                Log.d("NAV", "nav onclik $characterId" )
                 putExtra(CHARACTER_ID, characterId)
             }
         )

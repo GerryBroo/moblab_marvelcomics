@@ -1,6 +1,7 @@
 package hu.geribruu.marvelcomics.ui.character
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,7 +18,8 @@ class CharacterDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_character_detail)
 
         viewModel.showTextDataNotifier.observe(this, { data ->
-            tv_character_dy.text = data
+            tv_character_dy.text = data.name
+            tv_desc_dy.text = data.description
         })
     }
 }

@@ -1,11 +1,10 @@
 package hu.geribruu.marvelcomics.ui.character
 
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
+import android.util.Log
+import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import hu.geribruu.marvelcomics.network.CharacterRepository
+import hu.geribruu.marvelcomics.network.model.CharacterNet
 import javax.inject.Inject
 
 @HiltViewModel
@@ -18,7 +17,14 @@ class CharacterViewModel @Inject constructor(
         const val CHARACTER_ID = "CHARACTER_ID"
     }
 
-    private val showTextLiveData = savedStateHandle.getLiveData<String>(CHARACTER_ID)
-    val showTextDataNotifier: LiveData<String>
-        get() = showTextLiveData
+    private fun loadCharacter() : MutableLiveData<CharacterNet> {
+        val characterId = savedStateHandle.get<String>(CHARACTER_ID)
+        return repository.loadCharacter(characterId.toString())
+    }
+
+    val showTextDataNotifier: LiveData<CharacterNet> = loadCharacter()
+        get() {
+            field.value?.let { Log.d("ASD", it.description) }
+            return field
+        }
 }
