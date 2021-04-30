@@ -25,4 +25,7 @@ interface FavouriteCharacterDao {
 
     @Update
     suspend fun updateCharacter(character: CharacterDataModel)
+
+    @Query("SELECT * FROM characters WHERE apiId=:apiId")
+    fun getCharacterByApiId(apiId: String) : CharacterDataModel
 }
