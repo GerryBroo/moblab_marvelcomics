@@ -2,7 +2,6 @@ package hu.geribruu.marvelcomics.network
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import hu.geribruu.marvelcomics.model.toMarvelCharacter
 import hu.geribruu.marvelcomics.network.model.CharacterDataWrapper
 import hu.geribruu.marvelcomics.network.model.CharacterNet
 import retrofit2.Call

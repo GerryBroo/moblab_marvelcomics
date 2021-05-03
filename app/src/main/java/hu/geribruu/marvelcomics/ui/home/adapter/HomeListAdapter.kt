@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import hu.geribruu.marvelcomics.R
-import hu.geribruu.marvelcomics.model.MarvelCharacter
 import hu.geribruu.marvelcomics.network.model.CharacterNet
 import kotlinx.android.synthetic.main.layout_home_item.view.*
 

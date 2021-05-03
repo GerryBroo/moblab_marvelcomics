@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "505552798704",
+    "project_id": "moblabmarvelcomics",
+    "storage_bucket": "moblabmarvelcomics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505552798704:android:b9de3ec7f062fffdebd335",
+        "android_client_info": {
+          "package_name": "hu.geribruu.marvelcomics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505552798704-1m8c6msfe4pqap557oaecu0ku1ph1d9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1GrlRHumiA7aGS9rgcpaS5B9U6i9vaSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505552798704-1m8c6msfe4pqap557oaecu0ku1ph1d9t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
